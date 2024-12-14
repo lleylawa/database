@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.movie.HelloController"
+      spacing="15" alignment="CENTER" prefWidth="600" prefHeight="600"
+      style="-fx-background-color: #f4f4f9; -fx-padding: 20; -fx-border-color: #ccc; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+
+    <!-- Title -->
+    <Label text="Movie Ticket Booking" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+    <!-- Form Fields -->
+    <GridPane hgap="10" vgap="15" alignment="CENTER" style="-fx-padding: 10;">
+        <Label text="Select Movie:" style="-fx-font-size: 14px; -fx-text-fill: #555;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="movieDropdown" promptText="Select Movie" style="-fx-pref-width: 250;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Your Name:" style="-fx-font-size: 14px; -fx-text-fill: #555;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="userNameField" promptText="Enter your name" style="-fx-pref-width: 250;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Number of Tickets:" style="-fx-font-size: 14px; -fx-text-fill: #555;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="ticketCountField" promptText="Enter number of tickets" style="-fx-pref-width: 250;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Booking Date:" style="-fx-font-size: 14px; -fx-text-fill: #555;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="bookingDateField" style="-fx-pref-width: 250;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Book Now Button -->
+    <Button text="Book Now" onAction="#handleBookNow"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;" />
+
+    <!-- Notification Label -->
+    <Label fx:id="notificationLabel" style="-fx-text-fill: red; -fx-font-size: 14px; -fx-padding: 5;" />
+
+    <!-- Divider -->
+    <Separator style="-fx-background-color: #ccc;" />
+
+    <!-- Reviews Section -->
+    <Label text="Reviews" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+    <TextArea fx:id="reviewField" promptText="Write your review here..." wrapText="true" style="-fx-pref-height: 100; -fx-pref-width: 400;" />
+
+    <Button text="Add Review" onAction="#handleAddReview"
+            style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;" />
+
+    <ListView fx:id="reviewListView" style="-fx-pref-height: 150; -fx-pref-width: 400;" />
+</VBox>
